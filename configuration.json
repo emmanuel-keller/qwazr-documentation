@@ -1,0 +1,23 @@
+{
+	"providers": [
+		{
+			"name": "cassandra",
+			"class": "com.opensearchserver.provider.CassandraProvider",
+			"keyspaceLocator": {
+				"keyspace": "qwazr_public",
+				"cql": "select keyspace_name,user from repos where full_name=?"
+			},
+			"hosts": [
+				"ssd001.qwazr.net",
+				"ssd002.qwazr.net"
+			]
+		},
+		{
+			"name": "pegdown",
+			"class": "com.opensearchserver.provider.PegDownProvider"
+		}
+	],
+	"controllerPatterns": {
+		"index.js": ["/.*"]
+	}
+}
